@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>SpotDL-WebGUI</Name>
+  <Repository>spotdl/spotify-downloader</Repository>
+  <Registry>https://github.com/spotDL/spotify-downloader</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/spotDL/spotify-downloader/issues</Support>
+  <Project>https://github.com/spotDL/spotify-downloader</Project>
+  <Overview>Container spotDL finds songs from Spotify playlists on YouTube and downloads them - along with album art, lyrics and metadata.&#xD;
+Additionally provides a web interface for easily adding media links to process.</Overview>
+  <Category>Downloaders: MediaApp:Music</Category>
+  <WebUI>http://[IP]:[:PORT:8800]</WebUI>
+  <TemplateURL/>
+  <Icon>https://user-images.githubusercontent.com/19922556/111815072-5a83fe00-892f-11eb-9833-7930d1a2d08f.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1731205773</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebGUI Port" Target="8800" Default="8800" Mode="tcp" Description="WebGUI Port" Type="Port" Display="always" Required="true" Mask="false">8800</Config>
+  <Config Name="Music Path" Target="/music" Default="" Mode="rw" Description="Path for file downloads on host" Type="Path" Display="always" Required="true" Mask="false">/music</Config>
+</Container>
