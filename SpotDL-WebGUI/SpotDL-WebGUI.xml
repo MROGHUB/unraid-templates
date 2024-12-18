@@ -20,8 +20,7 @@
   <DateInstalled>1731356684</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>Made avaliable as Unraid template by MROGHUB&#xD;
-Please support SpotDL Directly at their repository https://github.com/spotDL/spotify-downloader</Requires>
+  <Requires>Made avaliable as Unraid template. Please support SpotDL Directly at their repository https://github.com/spotDL/spotify-downloader and add Extra Argument --restart always if you want to always run or restart</Requires>
   <Config Name="Music Location" Target="/music" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="WebGUI" Target="8800" Default="8800" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"/>
 </Container>
