@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Webhook Site Stack</Name>
+    <Repository>webhooksite/webhook.site</Repository>
+    <Registry>https://hub.docker.com/r/webhooksite/webhook.site/</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/webhooksite/webhook.site/issues</Support>
+    <Project>https://github.com/webhooksite/webhook.site</Project>
+    <Overview>Webhook Site is a modern, open-source webhook handler with a beautiful web interface. This template includes the full stack with Redis and Laravel Echo Server for real-time functionality.</Overview>
+    <Category>Web Applications:Development</Category>
+    <WebUI>http://[IP]:[PORT:8084]</WebUI>
+    <TemplateURL/>
+    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <ExtraParams/>
+    <PostArgs></PostArgs>
+    <CPUset/>
+    <DateInstalled>1731356684</DateInstalled>
+    <DonateText/>
+    <DonateLink/>
+    <Requires>Requires Docker Compose Manager plugin to be installed in Unraid. The stack includes Redis and Laravel Echo Server for full functionality.</Requires>
+
+    <!-- Webhook Site Configuration -->
+    <Config Name="Webhook Site Port" Target="8084" Default="8084" Mode="tcp" Description="Port for Webhook Site web interface" Type="Port" Display="always" Required="true" Mask="false"/>
+    <Config Name="Webhook Site Environment" Target="APP_ENV" Default="production" Mode="rw" Description="Application environment (dev/production)" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Webhook Site Debug Mode" Target="APP_DEBUG" Default="false" Mode="rw" Description="Enable debug mode" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Webhook Site URL" Target="APP_URL" Default="http://[IP]:8084" Mode="rw" Description="Base URL for Webhook Site" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Webhook Site Log Level" Target="APP_LOG" Default="errorlog" Mode="rw" Description="Log level for Webhook Site" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Webhook Site Database" Target="DB_CONNECTION" Default="sqlite" Mode="rw" Description="Database connection type" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Redis Host" Target="REDIS_HOST" Default="redis" Mode="rw" Description="Redis hostname" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Redis Port" Target="ECHO_REDIS_PORT" Default="6379" Mode="rw" Description="Redis port" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Echo Server Host" Target="LARAVEL_ECHO_SERVER_HOST" Default="0.0.0.0" Mode="rw" Description="Echo server host binding" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Echo Server Port" Target="LARAVEL_ECHO_SERVER_PORT" Default="6001" Mode="rw" Description="Echo server port" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Echo Protocol" Target="ECHO_PROTOCOL" Default="http" Mode="rw" Description="Echo server protocol" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Allow CORS" Target="ECHO_ALLOW_CORS" Default="true" Mode="rw" Description="Enable CORS support" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Allow Origin" Target="ECHO_ALLOW_ORIGIN" Default="*" Mode="rw" Description="Allowed origins for CORS" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Allow Methods" Target="ECHO_ALLOW_METHODS" Default="*" Mode="rw" Description="Allowed HTTP methods for CORS" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Allow Headers" Target="ECHO_ALLOW_HEADERS" Default="*" Mode="rw" Description="Allowed headers for CORS" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+
+    <!-- Volume Mappings -->
+    <Config Name="Webhook Site Data" Target="/app" Default="/mnt/user/appdata/webhook" Mode="rw" Description="Webhook Site application data" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Redis Data" Target="/data" Default="/mnt/user/appdata/redis" Mode="rw" Description="Redis database storage" Type="Path" Display="always" Required="true" Mask="false"/>
+</Container>
