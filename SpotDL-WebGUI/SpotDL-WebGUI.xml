@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="3">
   <Name>SpotDL-WebGUI</Name>
   <Repository>spotdl/spotify-downloader</Repository>
   <Registry>https://github.com/spotDL/spotify-downloader</Registry>
   <Network>bridge</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/spotDL/spotify-downloader/issues</Support>
   <Project>https://github.com/spotDL/spotify-downloader</Project>
   <Overview>Container spotDL finds songs from Spotify playlists on YouTube and downloads them - along with album art, lyrics and metadata. Additionally provides a web interface for easily adding media links to process.</Overview>
-  <Category>Downloaders: MediaApp:Music</Category>
+  <Category>Downloaders:MediaApp:Music</Category>
   <WebUI>http://[IP]:[PORT:8800]</WebUI>
   <TemplateURL/>
   <Icon>https://user-images.githubusercontent.com/19922556/111815072-5a83fe00-892f-11eb-9833-7930d1a2d08f.png</Icon>
@@ -20,7 +20,23 @@
   <DateInstalled>1731356684</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>Made avaliable as Unraid template by Unraid MackAttack and GitHub MROGHUB. Please support SpotDL Directly at their repository https://github.com/spotDL/spotify-downloader and add Extra Argument --restart always if you want to always run or restart</Requires>
-  <Config Name="Music Location" Target="/music" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="WebGUI" Target="8800" Default="8800" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Requires>Made available as Unraid template by Unraid MackAttack and GitHub MROGHUB. Please support SpotDL Directly at their repository https://github.com/spotDL/spotify-downloader and add Extra Argument --restart always if you want to always run or restart</Requires>
+
+  <!-- Core Configuration -->
+  <Config Name="Music Location" Target="/music" Default="" Mode="rw" Description="Directory for storing downloaded music files" Type="Path" Display="always" Required="true" Mask="false"/>
+
+  <!-- AppData Configuration -->
+  <Config Name="AppData Directory" Target="/appdata" Default="/appdata" Mode="rw" Description="Directory for storing SpotDL configuration and cache" Type="Path" Display="always" Required="true" Mask="false"/>
+
+  <!-- Audio Settings -->
+  <Config Name="Output Format" Target="/etc/spotdl/config.json" Default="mp3" Mode="rw" Description="Audio output format (mp3/m4a/opus)" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Bitrate" Target="/etc/spotdl/config.json" Default="128" Mode="rw" Description="Audio bitrate in kbps (128/256)" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Disable Bitrate Conversion" Target="/etc/spotdl/config.json" Default="False" Mode="rw" Description="Whether to disable automatic bitrate conversion" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <!-- Cookie Management -->
+  <Config Name="Cookie File Path" Target="/appdata/cookies.txt" Default="/appdata/cookies.txt" Mode="rw" Description="Path to YouTube Music cookie file" Type="Path" Display="advanced" Required="false" Mask="false"/>
+
+  <!-- Web GUI Settings -->
+  <Config Name="WebGUI Port" Target="8800" Default="8800" Mode="tcp" Description="Port for SpotDL WebGUI" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="WebGUI Host" Target="0.0.0.0" Default="0.0.0.0" Mode="tcp" Description="Host binding for SpotDL WebGUI" Type="Variable" Display="advanced" Required="true" Mask="false"/>
 </Container>
