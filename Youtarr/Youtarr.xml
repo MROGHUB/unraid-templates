@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="3">
+    <Name>YouTarr</Name>
+    <Repository>dialmaster/youtarr:latest</Repository>
+    <Registry>https://github.com/dialmaster/youtarr</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dialmaster/youtarr/issues</Support>
+    <Project>https://github.com/dialmaster/youtarr</Project>
+    <Overview>A complete YouTube video downloader and manager with database backend and web interface.</Overview>
+    <Category>Downloaders:MediaApp:Video</Category>
+    <WebUI>http://[IP]:3087</WebUI>
+    <TemplateURL/>
+    <Icon>https://raw.githubusercontent.com/dialmaster/youtarr/master/docs/logo.png</Icon>
+    <ExtraParams>--restart unless-stopped</ExtraParams>
+
+    <!-- Core Configuration -->
+    <Config Name="Database Password" Target="MYSQL_ROOT_PASSWORD" Default="123qweasd" Mode="" Description="Password for MySQL root user" Type="Variable" Display="always" Required="true" Mask="true"/>
+    
+    <!-- Storage Paths -->
+    <Config Name="YouTube Output Directory" Target="${YOUTUBE_OUTPUT_DIR}" Default="/mnt/user/videos/youtube" Mode="rw" Description="Directory for downloaded videos" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Images Directory" Target="./server/images" Default="/mnt/user/appdata/youtarr/images" Mode="rw" Description="Storage for processed images" Type="Path" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Configuration Directory" Target="./config" Default="/mnt/user/appdata/youtarr/config" Mode="rw" Description="Location for application configuration files" Type="Path" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Jobs Directory" Target="./jobs" Default="/mnt/user/appdata/youtarr/jobs" Mode="rw" Description="Storage for job-related data" Type="Path" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Migrations Directory" Target="./migrations" Default="/mnt/user/appdata/youtarr/migrations" Mode="ro" Description="Database migration scripts location" Type="Path" Display="advanced" Required="true" Mask="false"/>
+
+    <!-- Database Settings -->
+    <Config Name="MySQL Port" Target="3321" Default="3321" Mode="tcp" Description="Port for MySQL database" Type="Port" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Database Charset" Target="utf8mb4" Default="utf8mb4" Mode="" Description="Character encoding for database" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Database Collation" Target="utf8mb4_unicode_ci" Default="utf8mb4_unicode_ci" Mode="" Description="Collation scheme for database" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+
+    <!-- Web Interface Settings -->
+    <Config Name="WebGUI Port" Target="3087" Default="3087" Mode="tcp" Description="Port for YouTarr web interface" Type="Port" Display="always" Required="true" Mask="false"/>
+    <Config Name="WebGUI Host" Target="0.0.0.0" Default="0.0.0.0" Mode="tcp" Description="Host binding for YouTarr web interface" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+
+    <!-- Container Naming Prefix -->
+    <Config Name="Container Name Prefix" Target="youtarr-" Default="youtarr-" Mode="" Description="Prefix for container names" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+</Container>
