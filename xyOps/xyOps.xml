@@ -12,7 +12,7 @@
     <Category>Tools:Productivity:Network:Other</Category>
     <WebUI>http://[IP]:[PORT:5522]</WebUI>
     <TemplateURL/>
-    <Icon>https://raw.githubusercontent.com/pixlcore/xyops/main/htdocs/images/logo-icon.png</Icon>
+    <Icon>https://styles.redditmedia.com/t5_g3z6ea/styles/communityIcon_i0xt4qpaeqkg1.png</Icon>
     <ExtraParams>--init --hostname xyops01</ExtraParams>
     <PostArgs/>
     <CPUset/>
