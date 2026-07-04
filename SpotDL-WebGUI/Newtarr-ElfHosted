@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="3">
+    <Name>NewtArr</Name>
+    <Repository>tobin2010/newtarr</Repository>
+    <Registry>https://hub.docker.com/r/tobin2010/newtarr/</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/r/tobin2010/newtarr/</Support>
+    <Project>https://github.com/elfhosted/newtarr</Project>
+    <Overview>NewtArr continuously searches your *arr media libraries for missing content and items that need quality upgrades. It helps you complete your media collection by automatically triggering searches while remaining gentle on your indexers.</Overview>
+    <Category>Downloaders:MediaApp:Other</Category>
+    <WebUI>http://[IP]:[PORT:9705]</WebUI>
+    <TemplateURL/>
+    <Icon>https://docs.elfhosted.com/images/logo.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled/>
+    <DonateText/>
+    <DonateLink/>
+    <Requires/>
+
+    <!-- Web GUI Settings -->
+    <Config Name="WebGUI Port" Target="9705" Default="9705" Mode="tcp" Description="Port for NewtArr WebGUI" Type="Port" Display="always" Required="true" Mask="false">9705</Config>
+    
+    <!-- AppData Configuration -->
+    <Config Name="AppData Directory" Target="/config" Default="/mnt/user/appdata/newtarr" Mode="rw" Description="Directory for storing NewtArr configuration" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/newtarr</Config>
+
+    <!-- Environment Variables -->
+    <Config Name="Timezone" Target="TZ" Default="America/Los_Angeles" Mode="" Description="Container timezone" Type="Variable" Display="advanced" Required="false" Mask="false">America/Los_Angeles</Config>
+</Container>
