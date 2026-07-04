@@ -3,5 +3,5 @@
 ***SpotDL-WebGUI***
 https://github.com/spotDL/spotify-downloader
 
-***xyOps***
-https://github.com/pixlcore/xyops
+***Newtarr***
+https://github.com/elfhosted/newtarr
