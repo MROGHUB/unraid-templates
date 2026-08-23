@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>bitmagnet</Name>
+  <Repository>ghcr.io/bitmagnet-io/bitmagnet:latest</Repository>
+  <Registry>https://ghcr.io/bitmagnet-io/bitmagnet</Registry>
+  <Network>container:gluetun</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/bitmagnet-io/bitmagnet/discussions</Support>
+  <Project>https://bitmagnet.io/</Project>
+  <Overview>bitmagnet is a self-hosted BitTorrent indexer, DHT crawler, and torrent search engine.</Overview>
+  <Category>Downloaders: Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:3333]</WebUI>
+  <TemplateURL/>
+  <Icon>https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/bitmagnet.png</Icon>
+  <ExtraParams/>
+  <PostArgs>worker run --all</PostArgs>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>PostgreSQL database container and Gluetun VPN container</Requires>
+  <Config Name="Appdata Path" Mode="rw" Price="" Type="Path" Target="/root/.local/share/bitmagnet" Default="/mnt/user/appdata/bitmagnet" Mode="rw" Description="Container Data Path" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/bitmagnet</Config>
+  <Config Name="Log File Rotator Enabled" Mode="" Price="" Type="Variable" Target="LOG_FILE_ROTATOR_ENABLED" Default="true" Description="Enable logging to rotating files" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Postgres Host" Mode="" Price="" Type="Variable" Target="POSTGRES_HOST" Default="postgres" Description="Host or container name for PostgreSQL database" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Config Name="Postgres Password" Mode="" Price="" Type="Variable" Target="POSTGRES_PASSWORD" Default="postgres" Description="Password for PostgreSQL database" Type="Variable" Display="always" Required="true" Mask="true">postgres</Config>
+  <Config Name="TMDB API Key" Mode="" Price="" Type="Variable" Target="TMDB_API_KEY" Default="" Description="Optional API Key for TMDB metadata enrichment" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+</Container>
